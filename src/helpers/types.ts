@@ -3,6 +3,6 @@ export type Cat = {
     origin?: string;
     description?: string;
     adaptability: number;
-    affectionLevel: number;
-    lifeSpan: number;
+    affection_level: number;
+    life_span: number;
   };
