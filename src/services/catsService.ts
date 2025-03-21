@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-interface CatModel {
+export interface CatModel {
   weight: { imperial: string; metric: string };
   id: string;
   name: string;

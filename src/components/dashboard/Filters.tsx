@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
-const Filters = ({ onSortChange, onFilterChange }) => {
-  const [sort, setSort] = useState("name"); // Default sorting by name
+interface FiltersProps {
+  onSortChange: (
+    sort: "name" | "affection_level" | "adaptability" | "life_span"
+  ) => void;
+  onFilterChange: (filter: string) => void;
+}
+
+const Filters: FC<FiltersProps> = ({ onSortChange, onFilterChange }) => {
+  const [sort, setSort] = useState<"name" | "affection_level" | "adaptability" | "life_span">("name");
   const [filter, setFilter] = useState("");
 
-  const handleSortChange = (e) => {
-    setSort(e.target.value);
-    onSortChange(e.target.value);
+  const handleSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const selectedSort = e.target.value as "name" | "affection_level" | "adaptability" | "life_span";
+    setSort(selectedSort);
+    onSortChange(selectedSort);
   };
 
-  const handleFilterChange = (e) => {
+  const handleFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value);
     onFilterChange(e.target.value);
   };

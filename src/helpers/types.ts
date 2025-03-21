@@ -4,5 +4,5 @@ export type Cat = {
     description?: string;
     adaptability: number;
     affection_level: number;
-    life_span: number;
+    life_span: string;
   };
