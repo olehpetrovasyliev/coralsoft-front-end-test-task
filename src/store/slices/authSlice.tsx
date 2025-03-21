@@ -62,7 +62,7 @@ const authSlice = createSlice({
       state.data = {};
       state.user = null;
     },
-    logout(state) {
+    logout(_) {
       return initialState;
     },
     updateUserInfo(state, { payload }) {
