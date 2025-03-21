@@ -23,7 +23,7 @@ const Filters: FC<FiltersProps> = ({ onSortChange, onFilterChange }) => {
   };
 
   return (
-    <div className="flex space-x-4 mb-4">
+    <div className="flex flex-wrap space-x-4 mb-4 gap-4">
       <div>
         <label className="block">Sort By</label>
         <select
