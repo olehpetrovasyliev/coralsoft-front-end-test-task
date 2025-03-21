@@ -1,10 +1,10 @@
-
 import  { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAppSelector } from "../store/store";
 import BarChartComponent from "../components/dashboard/BarChart";
 import PieChartComponent from "../components/dashboard/PieChart";
 import LineChartComponent from "../components/dashboard/LineChart";
+import CatCard from "../components/dashboard/CatCard";
 
 const HomePage = () => {
 	const navigate = useNavigate();
@@ -54,7 +54,11 @@ const HomePage = () => {
 				<LineChartComponent title="Life Span Distribution" data={lifeSpanData} />
 			</div>
 
-			
+			<div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{cats.map((cat) => (
+					<CatCard key={cat.name} cat={cat} />
+				))}
+			</div>
 		</div>
 	);
 };
